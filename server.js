@@ -102,11 +102,12 @@ function findExtension(path)
             break;
         default:
             return "";
+            
     }
 }
 
 /** @function handleRequest 
- * Request handler for our http server 
+ * Request handler for our http server  
  * @param {http.ClientRequest} req - the http request object
  * @param {http.ServerResponse} res - the http response object
  */
