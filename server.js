@@ -65,7 +65,8 @@ function serveIndex(path, res, req) {
  * @param {http.serverResponse} res - the http response object
  */
 function serveFile(path, res) {
-    fs.readFile(path, function(err, data) {
+    fs.readFile(path, function(err, data) 
+    {
         if(err) 
         {
           console.error(err);
@@ -73,8 +74,35 @@ function serveFile(path, res) {
           res.end("Server Error: Could not read file");
           return;
         }
+        res.setHeader('Content-Type',findExtension(path));
         res.end(data);
+        
     });
+}
+
+function findExtension(path)
+{
+    switch (path2.extname(path))
+    {
+        case '.html':
+            return "text/html";
+            break;
+        case '.css':
+            return "text/css";
+            break;
+        case '.js':
+            return "text/js";
+            break;
+        case '.jpeg':
+        case '.jpg':
+            return "image/jpeg";
+            break;
+        case '.png':
+            return "image/png";
+            break;
+        default:
+            return "";
+    }
 }
 
 /** @function handleRequest 
