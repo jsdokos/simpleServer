@@ -1,0 +1,16 @@
+Add normal user
+	adduser XXXX
+give root access
+	usermod -aG sudo XXXX
+Add in the firewall
+	sudo ufw allow OpenSSH
+	ssh
+	http
+	https
+	sftp
+LAMP Install
+wordpressuser
+Swarley
+
+wordpress
+QWlj$Ir0izDPH43zr^
